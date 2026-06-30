@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Medics — Curated Automotive Accessories | Pilathara, Kannur</title>
+<meta name="description" content="Car Medics — a boutique automotive accessories house in Pilathara, Kannur. Wheels, finishes, lighting and interiors, considered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFAF8;
+  --paper-deep:#F1EFE9;
+  --ink:#16181C;
+  --ink-soft:#4A4D52;
+  --slate:#2C3E50;
+  --leather:#6B5B4F;
+  --gold:#C9A87C;
+  --line:rgba(22,24,28,.12);
+  --display:'Fraunces',serif;
+  --body:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:400;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 6vw}
+em{font-style:italic;color:var(--leather)}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:28px 6vw;background:rgba(250,250,248,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);transition:padding .3s;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{height:34px;width:auto}
+.logo-text{font-family:var(--display);font-weight:500;font-size:1.15rem;letter-spacing:.5px;color:var(--ink);line-height:1}
+.logo-text span{display:block;font-family:var(--body);font-size:.6rem;font-weight:400;letter-spacing:2.5px;color:var(--leather);text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;gap:42px;align-items:center}
+.nav-links a{font-size:.85rem;letter-spacing:.3px;color:var(--ink-soft);position:relative;padding:4px 0;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  border:1px solid var(--ink);padding:11px 26px;font-size:.8rem;letter-spacing:.5px;
+  color:var(--ink)!important;transition:all .25s;
+}
+.nav-cta:hover{background:var(--ink);color:var(--paper)!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:30px;background:none;border:none;cursor:pointer}
+.nav-burger span{height:1.5px;background:var(--ink)}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;
+  align-items:stretch;padding-top:0;
+}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:0 6vw;padding-top:120px}
+.hero-eyebrow{
+  font-family:var(--body);font-size:.78rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--leather);margin-bottom:28px;display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:38px;height:1px;background:var(--leather)}
+.hero h1{
+  font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,4.6vw,4.4rem);
+  line-height:1.06;letter-spacing:-.5px;color:var(--ink);
+}
+.hero-sub{
+  font-size:1.05rem;color:var(--ink-soft);max-width:440px;margin:30px 0 40px;
+  line-height:1.85;font-weight:300;
+}
+.hero-actions{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.btn-fill{
+  background:var(--ink);color:var(--paper);padding:17px 36px;font-size:.85rem;
+  letter-spacing:.8px;text-transform:uppercase;border:1px solid var(--ink);transition:all .25s;display:inline-block;
+}
+.btn-fill:hover{background:transparent;color:var(--ink)}
+.link-arrow{font-size:.85rem;letter-spacing:.5px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;transition:opacity .2s}
+.link-arrow:hover{opacity:.6}
+
+.hero-visual{position:relative;overflow:hidden;background:var(--ink)}
+.hero-visual img{width:100%;height:100%;object-fit:cover;min-height:600px;filter:saturate(.9) contrast(1.02)}
+.hero-plate{
+  position:absolute;left:-1px;bottom:48px;background:var(--paper);padding:20px 26px;
+  max-width:260px;border-top:1px solid var(--gold);
+}
+.hero-plate .pl-no{font-size:.68rem;letter-spacing:2px;color:var(--leather);text-transform:uppercase}
+.hero-plate h5{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:8px 0 4px}
+.hero-plate p{font-size:.8rem;color:var(--ink-soft);line-height:1.6}
+
+/* ===== MARQUEE STRIP ===== */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden}
+.strip-track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.strip-track span{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:1.3rem;color:var(--ink-soft);
+  padding:0 36px;white-space:nowrap;display:flex;align-items:center;gap:36px;
+}
+.strip-track span::after{content:'·';color:var(--gold);font-size:1.4rem}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== SECTION COMMON ===== */
+.sec{padding:130px 6vw}
+.sec-tight{padding:96px 6vw}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:80px}
+.sec-eyebrow{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--leather);margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.sec-eyebrow::before{content:'';width:38px;height:1px;background:var(--leather)}
+.sec-title{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1.12;letter-spacing:-.3px;color:var(--ink)}
+.sec-desc{color:var(--ink-soft);font-size:.98rem;line-height:1.9;font-weight:300}
+
+/* ===== ABOUT ===== */
+.about{background:var(--paper-deep)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;height:520px;object-fit:cover;filter:saturate(.92)}
+.about-num{
+  position:absolute;top:-30px;right:-30px;background:var(--ink);color:var(--paper);
+  width:130px;height:130px;border-radius:50%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+}
+.about-num b{font-family:var(--display);font-size:2rem;font-weight:500;line-height:1}
+.about-num span{font-size:.58rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;opacity:.7}
+.about-text p{color:var(--ink-soft);line-height:1.95;font-size:1rem;font-weight:300;margin-bottom:22px}
+.about-list{margin-top:34px;border-top:1px solid var(--line)}
+.about-list li{
+  display:flex;justify-content:space-between;align-items:center;padding:20px 0;
+  border-bottom:1px solid var(--line);font-size:.92rem;
+}
+.about-list li span:first-child{color:var(--ink);font-weight:500}
+.about-list li span:last-child{font-family:var(--display);font-style:italic;color:var(--leather)}
+
+/* ===== SERVICES — EDITORIAL LIST ===== */
+.svc-list{border-top:1px solid var(--line)}
+.svc-row{
+  display:grid;grid-template-columns:80px 1.4fr 2fr;gap:40px;align-items:center;
+  padding:42px 0;border-bottom:1px solid var(--line);transition:padding-left .3s;
+}
+.svc-row:hover{padding-left:16px}
+.svc-row .svc-idx{font-family:var(--display);font-style:italic;font-size:1.4rem;color:var(--gold)}
+.svc-row h3{font-family:var(--display);font-weight:500;font-size:1.7rem;letter-spacing:-.3px}
+.svc-row p{color:var(--ink-soft);font-size:.92rem;line-height:1.8;font-weight:300;max-width:480px}
+
+/* ===== CATALOGUE — SPECIMEN PLATES ===== */
+.catalogue{background:var(--paper-deep)}
+.plate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:64px 44px}
+.plate{display:flex;flex-direction:column}
+.plate-img{aspect-ratio:4/5;overflow:hidden;background:var(--ink);margin-bottom:22px}
+.plate-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:saturate(.92)}
+.plate:hover .plate-img img{transform:scale(1.05)}
+.plate-label{border-top:1px solid var(--ink);padding-top:16px;display:flex;justify-content:space-between;align-items:flex-start}
+.plate-label .pl-no{font-size:.68rem;letter-spacing:2px;color:var(--leather);text-transform:uppercase;margin-bottom:6px;display:block}
+.plate-label h4{font-family:var(--display);font-weight:500;font-size:1.2rem;letter-spacing:-.2px}
+.plate-label .pl-price{font-family:var(--display);font-style:italic;font-size:1.05rem;color:var(--ink);white-space:nowrap;margin-left:16px}
+
+/* ===== GALLERY ===== */
+.gallery-row{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px;align-items:start}
+.gallery-row img{width:100%;object-fit:cover;filter:saturate(.9)}
+.g1{height:560px}
+.g2{height:268px;margin-bottom:24px}
+.g3{height:268px}
+
+/* ===== TESTIMONIAL ===== */
+.testi{background:var(--ink);color:var(--paper);text-align:center;padding:130px 6vw}
+.testi blockquote{
+  font-family:var(--display);font-weight:400;font-style:italic;font-size:clamp(1.6rem,3.2vw,2.6rem);
+  line-height:1.5;max-width:880px;margin:0 auto 36px;letter-spacing:-.2px;
+}
+.testi cite{font-style:normal;font-size:.85rem;letter-spacing:1px;color:var(--gold);text-transform:uppercase}
+
+/* ===== PROCESS ===== */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:50px}
+.process-step{border-top:1px solid var(--ink);padding-top:24px}
+.process-step .p-no{font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--gold)}
+.process-step h4{font-family:var(--display);font-weight:500;font-size:1.25rem;margin:14px 0 12px}
+.process-step p{font-size:.88rem;color:var(--ink-soft);line-height:1.85;font-weight:300}
+
+/* ===== LOCATION ===== */
+.location{background:var(--paper-deep)}
+.loc-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:0}
+.loc-info{padding:64px;background:var(--paper);display:flex;flex-direction:column;justify-content:center}
+.loc-info .sec-eyebrow{margin-bottom:24px}
+.loc-info h2{font-family:var(--display);font-weight:400;font-size:2.1rem;margin-bottom:36px;line-height:1.2}
+.loc-item{padding:20px 0;border-top:1px solid var(--line)}
+.loc-item:last-of-type{border-bottom:1px solid var(--line)}
+.loc-item h5{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--leather);margin-bottom:8px}
+.loc-item p{color:var(--ink);font-size:.95rem;line-height:1.7}
+.loc-map{min-height:520px}
+.loc-map iframe{width:100%;height:100%;min-height:520px;border:0;filter:grayscale(.5) contrast(1.05)}
+
+/* ===== CTA ===== */
+.cta{padding:140px 6vw;text-align:center}
+.cta .sec-eyebrow{justify-content:center}
+.cta h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.15;letter-spacing:-.5px;max-width:760px;margin:0 auto}
+.cta p{color:var(--ink-soft);max-width:480px;margin:26px auto 44px;font-size:1rem;line-height:1.85;font-weight:300}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:var(--paper);padding:90px 6vw 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(250,250,248,.12)}
+.footer-brand p{color:rgba(250,250,248,.55);font-size:.9rem;line-height:1.9;margin-top:20px;max-width:280px;font-weight:300}
+.footer-col h5{font-family:var(--display);font-weight:500;font-size:.95rem;margin-bottom:24px;letter-spacing:.3px}
+.footer-col ul li{margin-bottom:14px}
+.footer-col ul li a{color:rgba(250,250,248,.55);font-size:.88rem;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{padding:28px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:.76rem;letter-spacing:.5px;color:rgba(250,250,248,.4)}
+
+/* ===== SCROLL REVEAL ===== */
+.fade-up{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-visual img{min-height:380px}
+  .hero-plate{position:static;margin:24px 6vw 0;max-width:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-img img{height:380px}
+  .plate-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-row{grid-template-columns:1fr}
+  .g1{height:340px}
+  .g2,.g3{height:260px;margin-bottom:0}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:36px}
+  .loc-grid{grid-template-columns:1fr}
+  .loc-info{padding:48px 6vw}
+  .sec-head{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:768px){
+  .nav-links{
+    position:fixed;top:84px;left:0;right:0;background:var(--paper);
+    flex-direction:column;align-items:stretch;gap:0;max-height:0;overflow:hidden;
+    transition:max-height .3s ease;border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{max-height:420px;padding:10px 6vw 24px}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .nav-burger{display:flex}
+  .nav-cta{display:none}
+  .plate-grid{grid-template-columns:1fr}
+  .svc-row{grid-template-columns:1fr;gap:10px}
+  .process-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .sec,.sec-tight{padding:80px 6vw}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="logo">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="29" stroke="#16181C" stroke-width="1"/>
+      <path d="M30 16L33 27H44L35 34L38 45L30 38L22 45L25 34L16 27H27L30 16Z" fill="#C9A87C"/>
+    </svg>
+    <span class="logo-text">Car Medics<span>Pilathara · Kannur</span></span>
+  </a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#catalogue">Accessories</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <span class="hero-eyebrow">A House of Automotive Detail</span>
+    <h1>The art of finishing<br>a car <em>properly</em>.</h1>
+    <p class="hero-sub">Car Medics is a considered accessories and styling house in Pilathara, Kannur — where every wheel, wrap and fixture is chosen, fitted and finished with the same care you'd expect from your car itself.</p>
+    <div class="hero-actions">
+      <a href="#catalogue" class="btn-fill">View the Catalogue</a>
+      <a href="#location" class="link-arrow">Visit Us →</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400&auto=format&fit=crop" alt="Modified car in showroom">
+    <div class="hero-plate">
+      <span class="pl-no">Atelier Note</span>
+      <h5>Every Car, Considered</h5>
+      <p>No two fitments are alike — we work to the car in front of us, not a price list.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <span>Alloy Wheels</span><span>Vinyl Finishes</span><span>Lighting</span><span>Sound</span><span>Body Styling</span><span>Ceramic Care</span><span>Interiors</span>
+    <span>Alloy Wheels</span><span>Vinyl Finishes</span><span>Lighting</span><span>Sound</span><span>Body Styling</span><span>Ceramic Care</span><span>Interiors</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img fade-up">
+        <img src="https://images.unsplash.com/photo-1632823469850-1b7b1e8b7e93?q=80&w=900&auto=format&fit=crop" alt="Technician at work">
+        <div class="about-num"><b>9+</b><span>Years</span></div>
+      </div>
+      <div class="about-text fade-up">
+        <span class="sec-eyebrow">Our Story</span>
+        <h2 class="sec-title" style="margin-bottom:26px">Started in one bay.<br>Trusted across <em>Kannur</em>.</h2>
+        <p>Car Medics began as a single-lift garage in Pilathara, with a simple idea — that fitting accessories is a craft, not a transaction. Nearly a decade later, that's still how every car leaves us: considered, not just completed.</p>
+        <p>We hold genuine and premium aftermarket stock, and every install happens in-house, by technicians who treat your car the way they'd treat their own.</p>
+        <ul class="about-list">
+          <li><span>Cars Treated</span><span>1,200+</span></li>
+          <li><span>Brands Stocked</span><span>40+</span></li>
+          <li><span>Customer Rating</span><span>4.9 / 5</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — EDITORIAL LIST -->
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="fade-up">
+        <span class="sec-eyebrow">What We Do</span>
+        <h2 class="sec-title">Four disciplines,<br>one <em>standard</em>.</h2>
+      </div>
+      <p class="sec-desc fade-up">From the wheels your car stands on to the finish it wears, each service is handled by a specialist within our team — never outsourced, never rushed.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row fade-up">
+        <span class="svc-idx">01</span>
+        <h3>Wheels &amp; Tyres</h3>
+        <p>Alloy fitments, alignment, balancing and tyre upgrades — matched precisely to your car's stance and use.</p>
+      </div>
+      <div class="svc-row fade-up">
+        <span class="svc-idx">02</span>
+        <h3>Wraps &amp; Finish</h3>
+        <p>Vinyl wraps, paint protection film, and colour-change finishes applied bubble-free, by hand.</p>
+      </div>
+      <div class="svc-row fade-up">
+        <span class="svc-idx">03</span>
+        <h3>Lighting &amp; Sound</h3>
+        <p>LED retrofits and component audio upgrades, wired clean and tuned to suit the cabin.</p>
+      </div>
+      <div class="svc-row fade-up">
+        <span class="svc-idx">04</span>
+        <h3>Interior &amp; Care</h3>
+        <p>Tailored upholstery, ceramic coating and detailing — the difference between clean and cared for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section class="sec catalogue" id="catalogue">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="fade-up">
+        <span class="sec-eyebrow">The Catalogue</span>
+        <h2 class="sec-title">A small selection,<br>chosen <em>well</em>.</h2>
+      </div>
+      <p class="sec-desc fade-up">Every piece below is in stock at our Pilathara workshop. Prices are starting estimates and vary by make and model.</p>
+    </div>
+    <div class="plate-grid">
+
+      <div class="plate fade-up">
+        <div class="plate-img"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=700&auto=format&fit=crop" alt="Forged alloy wheel"></div>
+        <div class="plate-label">
+          <div><span class="pl-no">No. 104</span><h4>Forged Alloy Set</h4></div>
+          <span class="pl-price">₹18,500</span>
+        </div>
+      </div>
+
+      <div class="plate fade-up">
+        <div class="plate-img"><img src="https://images.unsplash.com/photo-1606220838315-056192d5e927?q=80&w=700&auto=format&fit=crop" alt="LED headlamp"></div>
+        <div class="plate-label">
+          <div><span class="pl-no">No. 220</span><h4>LED Headlamp Retrofit</h4></div>
+          <span class="pl-price">₹6,200</span>
+        </div>
+      </div>
+
+      <div class="plate fade-up">
+        <div class="plate-img"><img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=700&auto=format&fit=crop" alt="Component speakers"></div>
+        <div class="plate-label">
+          <div><span class="pl-no">No. 330</span><h4>Component Speaker Set</h4></div>
+          <span class="pl-price">₹4,800</span>
+        </div>
+      </div>
+
+      <div class="plate fade-up">
+        <div class="plate-img"><img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=700&auto=format&fit=crop" alt="Vinyl wrap finish"></div>
+        <div class="plate-label">
+          <div><span class="pl-no">No. 150</span><h4>Full Body Vinyl Wrap</h4></div>
+          <span class="pl-price">₹32,000</span>
+        </div>
+      </div>
+
+      <div class="plate fade-up">
+        <div class="plate-img"><img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?q=80&w=700&auto=format&fit=crop" alt="Seat cover interior"></div>
+        <div class="plate-label">
+          <div><span class="pl-no">No. 410</span><h4>Tailored Seat Covers</h4></div>
+          <span class="pl-price">₹7,500</span>
+        </div>
+      </div>
+
+      <div class="plate fade-up">
+        <div class="plate-img"><img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=700&auto=format&fit=crop" alt="Ceramic coating"></div>
+        <div class="plate-label">
+          <div><span class="pl-no">No. 500</span><h4>9H Ceramic Coating</h4></div>
+          <span class="pl-price">₹12,000</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="fade-up">
+        <span class="sec-eyebrow">From The Floor</span>
+        <h2 class="sec-title">Cars we've<br><em>finished</em>.</h2>
+      </div>
+    </div>
+    <div class="gallery-row">
+      <div class="fade-up"><img class="g1" src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=900&auto=format&fit=crop" alt="Modified car"></div>
+      <div class="fade-up"><img class="g2" src="https://images.unsplash.com/photo-1591293835940-cb414eaf0e2c?q=80&w=600&auto=format&fit=crop" alt="Alloy wheel detail"></div>
+      <div class="fade-up"><img class="g3" src="https://images.unsplash.com/photo-1611016186353-9af58c69a533?q=80&w=600&auto=format&fit=crop" alt="Car interior"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testi">
+  <blockquote class="fade-up">"Got my Baleno wrapped and new alloys fitted. The finish is genuinely showroom-level — quiet confidence, no shortcuts."</blockquote>
+  <cite class="fade-up">Arjun Menon — Maruti Baleno</cite>
+</section>
+
+<!-- PROCESS -->
+<section class="sec-tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="fade-up">
+        <span class="sec-eyebrow">How It Works</span>
+        <h2 class="sec-title">From walk-in<br>to <em>rolled out</em>.</h2>
+      </div>
+      <p class="sec-desc fade-up">A straightforward process, with nothing hidden between quote and completion.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up"><span class="p-no">01</span><h4>Consult</h4><p>Tell us the look, sound or finish you're after. We assess your car and suggest the right fit.</p></div>
+      <div class="process-step fade-up"><span class="p-no">02</span><h4>Quote</h4><p>Transparent pricing on parts and labour, agreed before any work begins.</p></div>
+      <div class="process-step fade-up"><span class="p-no">03</span><h4>Fit</h4><p>Our own technicians install on-site, with the right tools and the right time.</p></div>
+      <div class="process-step fade-up"><span class="p-no">04</span><h4>Hand Back</h4><p>A final check, a clean wash, and a car that leaves feeling considered.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="loc-grid">
+    <div class="loc-info fade-up">
+      <span class="sec-eyebrow">Find Us</span>
+      <h2>The workshop is<br>open in Pilathara.</h2>
+      <div class="loc-item">
+        <h5>Address</h5>
+        <p>Car Medics, Pilathara, Kannur District, Kerala — 670642</p>
+      </div>
+      <div class="loc-item">
+        <h5>Hours</h5>
+        <p>Monday – Saturday, 9:00 AM – 7:30 PM<br>Sunday, 10:00 AM – 4:00 PM</p>
+      </div>
+      <div class="loc-item">
+        <h5>Contact</h5>
+        <p>+91 90000 00000 — info@carmedics.in</p>
+      </div>
+      <a href="tel:+919000000000" class="btn-fill" style="margin-top:34px;text-align:center;width:fit-content">Call the Workshop →</a>
+    </div>
+    <div class="loc-map fade-up">
+      <iframe src="https://www.google.com/maps?q=Pilathara,Kannur,Kerala&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="sec-eyebrow fade-up">Ready When You Are</span>
+  <h2 class="fade-up">Bring your car in.<br>Leave it considered.</h2>
+  <p class="fade-up">Walk-ins are always welcome — though booking ahead means your bay is ready the moment you arrive.</p>
+  <div class="fade-up" style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:+919000000000" class="btn-fill">Call Now</a>
+    <a href="#catalogue" class="link-arrow">View Catalogue →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:32px">
+            <circle cx="30" cy="30" r="29" stroke="#FAFAF8" stroke-width="1"/>
+            <path d="M30 16L33 27H44L35 34L38 45L30 38L22 45L25 34L16 27H27L30 16Z" fill="#C9A87C"/>
+          </svg>
+          <span class="logo-text" style="color:#FAFAF8">Car Medics<span style="color:#C9A87C">Pilathara · Kannur</span></span>
+        </div>
+        <p>A boutique automotive accessories house in Pilathara, Kerala — finishing cars with care since day one.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#catalogue">Accessories</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#catalogue">Wheels &amp; Tyres</a></li>
+          <li><a href="#catalogue">Wraps &amp; Finish</a></li>
+          <li><a href="#catalogue">Lighting &amp; Sound</a></li>
+          <li><a href="#catalogue">Interior &amp; Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Visit</h5>
+        <ul>
+          <li><a href="#location">Pilathara, Kannur, Kerala</a></li>
+          <li><a href="tel:+919000000000">+91 90000 00000</a></li>
+          <li><a href="mailto:info@carmedics.in">info@carmedics.in</a></li>
+          <li><a href="#location">Mon–Sat 9AM–7:30PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Car Medics, Pilathara. All rights reserved.</p>
+      <p>FINISHED, NOT JUST FITTED</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const burger = document.getElementById('navBurger');
+  const menu = document.getElementById('navLinks');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.addEventListener('click', e => { if(e.target.tagName === 'A') menu.classList.remove('open'); });
+})();
+(function(){
+  const els = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); obs.unobserve(en.target);} });
+  }, {threshold:.15});
+  els.forEach(el => obs.observe(el));
+})();
+</script>
+
+</body>
+</html>
